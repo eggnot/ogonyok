@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/shaman_spsh_resize.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "hand_move"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("body/hand:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 55.8257, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 60.1216, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("body:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("body:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1.05, -0.25, 0, 0.25, 0, 0.95, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[node name="Shaman" type="Node2D"]
+
+[node name="body" type="Sprite" parent="."]
+position = Vector2( 302.679, 234.469 )
+scale = Vector2( 1, 0.996846 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( -4.18994, -21.9272, 261.288, 333.995 )
+
+[node name="hand" type="Sprite" parent="body"]
+position = Vector2( -74.892, -29.4657 )
+rotation = 0.557752
+texture = ExtResource( 1 )
+offset = Vector2( 74.892, 29.4657 )
+region_enabled = true
+region_rect = Rect2( 0.697327, 317.494, 210.466, 133.933 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hand_move = SubResource( 1 )
