@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="LD46"
-run/main_scene="res://Calculations.tscn"
+run/main_scene="res://Calc_and_rithm.tscn"
 config/icon="res://icon.png"
 
 [display]
